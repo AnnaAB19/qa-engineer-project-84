@@ -114,7 +114,27 @@ test-cases:
     
   - summary: |
       Возможно сбросить фильтр по категории
-    status: pass    
+    status: pass 
+
+  - summary: |
+      Проверка успешного оформления заказа
+    status: pass
+  
+  - summary: |  
+      Проверка работы кнопки Clear Cart в Корзине
+    status: fail
+  
+  - summary: |
+      Проверка работы кнопки Delete в строке товара в Корзине
+    status: fail
+ 
+  - summary: |
+      Проверка работы фильтра по цене
+    status: fail 
+  
+  - summary: |
+      Проверка работы кнопок Previous и Next
+    status: pass  
 
 bugreports:
   - summary: |
@@ -167,4 +187,34 @@ bugreports:
     expected-result: |
       При неотмеченном In Stock показываются только товары не в наличии.
     actual-result: |
-      При неотмеченном In Stock показываются товары в наличии. Папка баги2, файл баг4             
+      При неотмеченном In Stock показываются товары в наличии. Папка баги2, файл баг4   
+
+  - summary: |
+      После нажатия кнопки Clear Cart товары не удаляются из корзины
+    environment: |
+      Google Chrome	128.0.6613.138 (Официальная сборка) (64 бит)
+      ОС Windows 11
+    steps-to-reproduce: |
+      1. Добавить товары в корзину
+      2. Перейти в корзину
+      3. Нажать Clear Cart
+      4. Перейти в магазин, нажав на кнопку Store
+      5. Перейти обратно в корзину
+    expected-result: |
+      После нажатия кнопки Clear Cart товары удаляются из корзины
+    actual-result: |
+      После нажатия кнопки Clear Cart товары не удаляются из корзины   
+
+   - summary: |
+      Фильтр цен не работает при неотмеченном In Stock.
+    environment: |
+      Google Chrome	128.0.6613.138 (Официальная сборка) (64 бит)
+      ОС Windows 11
+    steps-to-reproduce: |
+      1. Зайти на страницу магазина
+      2. Выбрать диапазон цен
+      2. Убрать галочку чек-бокса In Stock
+    expected-result: |
+      При неотмеченном In Stock показываются товары с ценами из установленного диапазона.
+    actual-result: |
+      Фильтр цен не работает при неотмеченном In Stock.

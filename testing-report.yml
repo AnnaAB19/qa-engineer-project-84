@@ -58,3 +58,23 @@
 - summary: |
     Проверка того, что страница сайта загружается, обновляется без ошибок
   status: fail  
+
+- summary: |
+    Проверка успешного оформления заказа
+  status: pass
+  
+- summary: |
+    Проверка работы кнопки Clear Cart в Корзине
+  status: pass
+  
+- summary: |
+    Проверка работы кнопки Delete в строке товара в Корзине
+  status: fail
+ 
+- summary: |
+    Проверка работы фильтра по цене
+  status: fail 
+  
+- summary: |
+    Проверка работы кнопок Previous и Next
+  status: pass

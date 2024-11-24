@@ -78,3 +78,7 @@
 - summary: |
     Проверка работы кнопок Previous и Next
   status: pass
+
+- summary: |
+    Проверка сброса фильтра по цене
+  status: fail  
